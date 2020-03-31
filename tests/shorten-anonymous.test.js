@@ -14,7 +14,7 @@ describe("Shorten Anonymous", () => {
         await page.$eval( '#shorten', el => el.click() );
         await page.waitForSelector('input.result-box');
         const val = await page.$eval('input.result-box', el => el.value);
-        expect(val).toMatch(/^http:\/\/polr\.web-74\.com\/[0-9]+/);
+        expect(val).toMatch(/^http:\/\/polr\.web-74\.com\/[a-zA-Z0-9]+/);
         await page.screenshot({path: './tests/img/shorten2.png'});
     }, timeout);
 
