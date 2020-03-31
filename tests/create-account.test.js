@@ -27,7 +27,6 @@ describe("Tests basiques", () => {
                 .from(document.querySelectorAll('#navbar li a'))
                 .filter(el => el.textContent === 'Sign Up')[0].click();
         });
-        // on attent que l'élément ".title" soit chargé
         // attendre que l'élément <body> soit chargé
         await page.waitForSelector('body');
         // récupérer le contenu de l'élément <body>
@@ -41,41 +40,23 @@ describe("Tests basiques", () => {
     test('Sign Up and Register', async () => {
         await page.goto('http://polr.web-74.com/signup');
         await page.waitForSelector('body');
-        
-        await page.type("input[name='username']", 'gerard');
-        await page.screenshot({ path: './tests/img/create-account-1fiels.png' });
-        await page.type("input[name='password']", '123');
 
-        await page.type("input[name='email']", 'gerard@test.fr');
+        await page.type(".container input[name='username']", 'xavier');
+        await page.type(".container input[name='password']", 'test3');
+        await page.type(".container input[name='email']", 'xavier@gmail.com');
+
         await page.screenshot({ path: './tests/img/create-account-3fiels.png' });
 
-        // click sur le lien "About" de la navigation
-        await page.waitForSelector('.btn-success');
-        await page.$eval('.btn-success', el => el.click());
-        // const html = page.$eval('body', e => e.innerHTML);
-        // await page.screenshot({ path: './tests/img/create-account-signIn.png' });
-        // console.log({ html })
-        // expect(html).toContain("Login");
+        // click sur le button "register" de la navigation
+        await page.$eval('input[value="Register"]', el => el.click());
 
-        // const val = await page.$eval('input.result-box', el => el.value);
-        // expect(val).toMatch(/^http:\/\/polr\.web-74\.com\/[0-9]+/);
-        // await page.screenshot({path: './tests/img/shorten2.png'});
+        await page.waitForSelector(".login-submit");
 
-        // await page.goto('http://polr.web-74.com');
+        const html = await page.$eval('body h1', e => e.innerHTML);
+        await page.screenshot({ path: './tests/img/create-account-signIn.png' });
+        console.log(html);
+        expect(html).toBe("Login");
 
-        // await page.waitForSelector('#navbar li a');
-        // // click sur le lien "Sign Up" de la navigation
-        // await page.evaluate( () => {
-        //     Array
-        //         .from( document.querySelectorAll( '#navbar li a' ) )
-        //         .filter( el => el.textContent === 'Sign Up' )[0].click();
-        // });
-        // // on attent que l'élément ".title" soit chargé
-        // await page.waitForSelector('.title');
-        // // on récupère le code HTML
-        // const html = await page.$eval('.title', e => e.innerHTML);
-        // // on vérifie qu'il contient la bonne chaîne de caractères
-        // expect(html).toContain("Register");
     }, timeout);
 
 
