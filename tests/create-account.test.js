@@ -37,27 +37,27 @@ describe("Tests basiques", () => {
     }, timeout);
 
     // champs Rgegister a remplir
-    test('Sign Up and Register', async () => {
-        await page.goto('http://polr.web-74.com/signup');
-        await page.waitForSelector('body');
+    // test('Sign Up and Register', async () => {
+    //     await page.goto('http://polr.web-74.com/signup');
+    //     await page.waitForSelector('body');
 
-        await page.type(".container input[name='username']", 'xavier');
-        await page.type(".container input[name='password']", 'test3');
-        await page.type(".container input[name='email']", 'xavier@gmail.com');
+    //     await page.type(".container input[name='username']", 'xavier');
+    //     await page.type(".container input[name='password']", 'test3');
+    //     await page.type(".container input[name='email']", 'xavier@gmail.com');
 
-        await page.screenshot({ path: './tests/img/create-account-3fiels.png' });
+    //     await page.screenshot({ path: './tests/img/create-account-3fiels.png' });
 
-        // click sur le button "register" de la navigation
-        await page.waitForSelector('input[value="Register"]');
-        await page.$eval('input[value="Register"]', el => el.click());
+    //     // click sur le button "register" de la navigation
+    //     await page.waitForSelector('input[value="Register"]');
+    //     await page.$eval('input[value="Register"]', el => el.click());
 
-        await page.waitForSelector(".login-submit");
+    //     await page.waitForSelector(".login-submit");
 
-        const html = await page.$eval('body h1', e => e.innerHTML);
-        await page.screenshot({ path: './tests/img/create-account-signIn.png' });
-        expect(html).toBe("Login");
+    //     const html = await page.$eval('body h1', e => e.innerHTML);
+    //     await page.screenshot({ path: './tests/img/create-account-signIn.png' });
+    //     expect(html).toBe("Login");
 
-    }, timeout);
+    // }, timeout);
 
     // cette fonction est lancée avant chaque test de cette
     // série de tests
