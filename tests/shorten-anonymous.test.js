@@ -9,13 +9,13 @@ describe("Shorten Anonymous", () => {
         await page.goto('http://polr.web-74.com');
         await page.waitForSelector('.long-link-input');
         await page.type('.long-link-input', 'https://www.google.com/search?source=hp&ei=QQbPW52GC9CRlwSHw46oAg&q=puppeteer+jest&oq=puppeteer+jest&gs_l=psy-ab.3...2441.6095.0.6926.0.0.0.0.0.0.0.0..0.0....0...1c.1.64.psy-ab..0.0.0....0.qKd5wLlrTYk');
-        await page.screenshot({path: './tests/img/shorten-anonymous/shorten1.png'});
+        await page.screenshot({path: './tests/img/shorten1.png'});
         await page.waitForSelector('#shorten');
         await page.$eval( '#shorten', el => el.click() );
         await page.waitForSelector('input.result-box');
         const val = await page.$eval('input.result-box', el => el.value);
         expect(val).toMatch(/^http:\/\/polr\.web-74\.com\/[0-9]+/);
-        await page.screenshot({path: './tests/img/shorten-anonymous/shorten2.png'});
+        await page.screenshot({path: './tests/img/shorten2.png'});
     }, timeout);
 
 
