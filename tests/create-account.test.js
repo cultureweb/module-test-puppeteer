@@ -54,7 +54,6 @@ describe("Tests basiques", () => {
 
         const html = await page.$eval('body h1', e => e.innerHTML);
         await page.screenshot({ path: './tests/img/create-account-signIn.png' });
-        console.log(html);
         expect(html).toBe("Login");
 
     }, timeout);
