@@ -13,7 +13,7 @@ describe("Tests basiques", () => {
         // récupérer le contenu de l'élément <body>
         const html = await page.$eval('body', e => e.innerHTML);
         // vérifier que dans cet élément Body on trouve "Polr du campus"
-        await page.screenshot({path: './tests/img/basic-home.png'});
+        await page.screenshot({ path: './tests/img/create-account-basic-home.png' });
         expect(html).toContain("Polr - Campus Annecy")
     }, timeout);
 
@@ -22,38 +22,40 @@ describe("Tests basiques", () => {
         await page.goto('http://polr.web-74.com');
         await page.waitForSelector('#navbar li a');
         // click sur le lien "Sign Up" de la navigation
-        await page.evaluate( () => {
+        await page.evaluate(() => {
             Array
-                .from( document.querySelectorAll( '#navbar li a' ) )
-                .filter( el => el.textContent === 'Sign Up' )[0].click();
+                .from(document.querySelectorAll('#navbar li a'))
+                .filter(el => el.textContent === 'Sign Up')[0].click();
         });
         // on attent que l'élément ".title" soit chargé
-      // attendre que l'élément <body> soit chargé
-      await page.waitForSelector('body');
-      // récupérer le contenu de l'élément <body>
-      const html = await page.$eval('body', e => e.innerHTML);
+        // attendre que l'élément <body> soit chargé
+        await page.waitForSelector('body');
+        // récupérer le contenu de l'élément <body>
+        const html = await page.$eval('body', e => e.innerHTML);
         // on vérifie qu'il contient la bonne chaîne de caractères
+        await page.screenshot({ path: './tests/img/create-account-signUp.png' });
         expect(html).toContain("Register");
     }, timeout);
 
-     // champs Rgegister a remplir
-      test('Sign Up an  Register', async () => {
-        await page.from( document.querySelectorAll( 'imput name'))
-        await page.waitForSelector('username');
-        await page.type('text','gerard')
-        await page.screenshot({path: './tests/img/create-account/username.png'});
+    // champs Rgegister a remplir
+    test('Sign Up and Register', async () => {
+        await page.goto('http://polr.web-74.com/signup');
+        await page.waitForSelector('body');
+        
+        await page.type("input[name='username']", 'gerard');
+        await page.screenshot({ path: './tests/img/create-account-1fiels.png' });
+        await page.type("input[name='password']", '123');
 
-        await page.from( document.querySelectorAll( 'imput name'))
-        await page.waitForSelector('password');
-        await page.type('password','123')
-        await page.screenshot({path: './tests/img/create-account/password.png'});
+        await page.type("input[name='email']", 'gerard@test.fr');
+        await page.screenshot({ path: './tests/img/create-account-3fiels.png' });
 
-        await page.from( document.querySelectorAll( 'imput name'))
-        await page.waitForSelector('email');
-        await page.type('email','gerard@123.fr')
-        await page.screenshot({path: './tests/img/create-account/email.png'});
-
-        await page.waitForSelector('#btn btn-default btn-success');
+        // click sur le lien "About" de la navigation
+        await page.waitForSelector('.btn-success');
+        await page.$eval('.btn-success', el => el.click());
+        // const html = page.$eval('body', e => e.innerHTML);
+        // await page.screenshot({ path: './tests/img/create-account-signIn.png' });
+        // console.log({ html })
+        // expect(html).toContain("Login");
 
         // const val = await page.$eval('input.result-box', el => el.value);
         // expect(val).toMatch(/^http:\/\/polr\.web-74\.com\/[0-9]+/);
