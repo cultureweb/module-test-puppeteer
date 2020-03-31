@@ -18,23 +18,23 @@ describe("Tests basiques", () => {
     }, timeout);
 
     //parcours client avec sign up
-    test('home and Sign Up', async () => {
-        await page.goto('http://polr.web-74.com');
-        await page.waitForSelector('#navbar li a');
-        // click sur le lien "Sign Up" de la navigation
-        await page.evaluate(() => {
-            Array
-                .from(document.querySelectorAll('#navbar li a'))
-                .filter(el => el.textContent === 'Sign Up')[0].click();
-        });
-        // attendre que l'élément <body> soit chargé
-        await page.waitForSelector('body');
-        // récupérer le contenu de l'élément <body>
-        const html = await page.$eval('body', e => e.innerHTML);
-        // on vérifie qu'il contient la bonne chaîne de caractères
-        await page.screenshot({ path: './tests/img/create-account-signUp.png' });
-        expect(html).toContain("Register");
-    }, timeout);
+    // test('home and Sign Up', async () => {
+    //     await page.goto('http://polr.web-74.com');
+    //     await page.waitForSelector('#navbar li a');
+    //     // click sur le lien "Sign Up" de la navigation
+    //     await page.evaluate(() => {
+    //         Array
+    //             .from(document.querySelectorAll('#navbar li a'))
+    //             .filter(el => el.textContent === 'Sign Up')[0].click();
+    //     });
+    //     // attendre que l'élément <body> soit chargé
+    //     await page.waitForSelector('body');
+    //     // récupérer le contenu de l'élément <body>
+    //     const html = await page.$eval('body', e => e.innerHTML);
+    //     // on vérifie qu'il contient la bonne chaîne de caractères
+    //     await page.screenshot({ path: './tests/img/create-account-signUp.png' });
+    //     expect(html).toContain("Register");
+    // }, timeout);
 
     // champs Rgegister a remplir
     // test('Sign Up and Register', async () => {
