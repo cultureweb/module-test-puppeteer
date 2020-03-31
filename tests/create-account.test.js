@@ -48,7 +48,7 @@ describe("Tests basiques", () => {
         await page.screenshot({ path: './tests/img/create-account-3fiels.png' });
 
         // click sur le button "register" de la navigation
-        await page.$eval('input[value="Register"]', el => el.click());
+        await page.$eval('.btn-success', el => el.click());
 
         await page.waitForSelector(".login-submit");
 
@@ -57,7 +57,6 @@ describe("Tests basiques", () => {
         expect(html).toBe("Login");
 
     }, timeout);
-
 
     // cette fonction est lancée avant chaque test de cette
     // série de tests
