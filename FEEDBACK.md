@@ -8,7 +8,8 @@
 
 **Message :**
 
- J’aimerais pouvoir partager tous les raccourcis que j’ai créé avec un autre utilisateur. Comment est-ce que je peux faire ?
+ J’aimerais pouvoir partager tous les raccourcis que j’ai créé avec un autre utilisateur.  
+ Comment est-ce que je peux faire ?
 
 **OS :**
 
@@ -16,8 +17,8 @@
 
 ### Reply :
 
-Cette fonctionnalité n’est pas disponible actuellement.
-Vous pouvez aller sur la page Links de votre Dashboard sur laquelle vous trouverez la liste de tous vos raccourcis.
+Cette fonctionnalité n’est pas disponible actuellement.  
+Vous pouvez aller sur la page Links de votre Dashboard sur laquelle vous trouverez la liste de tous vos raccourcis.  
 Chaque raccourci est de la forme http://polr.web-74.com/[Link Ending]
 
 ### Development Team Request:
@@ -62,8 +63,8 @@ Nothing
 
 **Comments :** 
 
-Prise de contact via chat avec Mme Cerise
-Après vérification, compte mal créé
+Prise de contact via chat avec Mme Cerise  
+Après vérification, compte mal créé  
 Accompagnement de Mme Cerise pour la création de son compte
 
 **Support technician :**
@@ -91,8 +92,8 @@ Les compteurs ne fonctionnent pas
 
 ### Reply :
 
-Effectivement, il y a une anomalie au niveau des compteurs
-Notre service technique travaille à la résolution de celle-ci
+Effectivement, il y a une anomalie au niveau des compteurs  
+Notre service technique travaille à la résolution de celle-ci  
 Nous vous tiendrons informée dès résolution.
 
 ### Development Team Request:
@@ -136,8 +137,8 @@ Nothing
 
 **Comments :** 
 
-Prise de contact via chat avec M. Martin
-Après vérification de la configuration, http://xxx/titi fonctionne
+Prise de contact via chat avec M. Martin  
+Après vérification de la configuration, http://xxx/titi fonctionne  
 IE 2.0 obsolète
 
 **Support technician :**
@@ -174,8 +175,8 @@ Nothing
 
 **Comments :** 
 
-Vérification faite, les liens fonctionnent
-Pas réussi à contacter le client pour complément d’information
+Vérification faite, les liens fonctionnent  
+Pas réussi à contacter le client pour complément d’information  
 
 **Support technician :**
 Carl / Cédric / Florent / Thomas
